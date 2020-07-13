@@ -10,9 +10,13 @@ btn.onclick = function (e){
   console.log(video.__proto__)
   console.log(typeof video.width)
   console.log(video.videoHeight)
+
+  // fazer o canvas ter msm tamnaho do video
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  // transforma o canvas em URL para que possa armazenar ele
   const img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
   // window.location.href = img; // baixa um arquivo sem extesão por causa do MIME octet-stream
   window.localStorage.setItem("imagem", img)
