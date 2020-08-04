@@ -30,7 +30,7 @@ btn.onclick = function (){
   // renderizar imagem
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
   
-  // transforma o canvas em URL para que possa armazenar ele
+  // transforma o canvas em URL para que possa armazenar ele e qual a qualidade da imagem (maximo 1)
   const img = canvas.toDataURL("image/png", 0.1) //.replace("image/png", "image/octet-stream");
   // window.location.href = img; // baixa um arquivo sem extesão por causa do MIME octet-stream
   window.localStorage.setItem("imagem", img)
@@ -53,7 +53,8 @@ function handleSucces(stream){
 function handleError(error){
   console.log("mensagem de erro : ", error.message, error.name)
   if (error.message === "Permission denied"){
-    // poderia utilizar a API nativa "Permissions" (https://caniuse.com/#feat=permissions-api) 
+    // poderia utilizar a API nativa "Permissions"  (https://caniuse.com/#feat=permissions-api) 
+    // porem, alguns navegadores ainda n tem suporte
     
   }
 }
