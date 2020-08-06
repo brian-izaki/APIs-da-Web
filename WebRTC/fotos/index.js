@@ -3,6 +3,8 @@
 const video = document.querySelector('video');
 const canvas = document.querySelector('canvas');
 const btn = document.querySelector('button');
+const btnStop = document.querySelector('#stop');
+const btnStart = document.querySelector('#start');
 const localImage = document.querySelector('#local');
 const imgSalvo = document.querySelector('#imgSalvo');
 
@@ -37,28 +39,64 @@ btn.onclick = function (){
   console.log(img)
 }
 
-const constraints = {
-  audio: false,
-  video: true,
-};
-
-function handleSucces(stream){
-  console.log('Promisse -> stream', stream)
-    // instancia um MediaStream
-    window.stream = stream;
-    // srcObject é propriedade de HTMLMediaElement (elementos de midia no HTML) carrega um src na tag video
-    video.srcObject = stream;
+btnStart.onclick = () => {
+  init();
 }
 
-function handleError(error){
-  console.log("mensagem de erro : ", error.message, error.name)
-  if (error.message === "Permission denied"){
-    // poderia utilizar a API nativa "Permissions"  (https://caniuse.com/#feat=permissions-api) 
-    // porem, alguns navegadores ainda n tem suporte
-    
+btnStop.onclick = () => {
+  stopVideo(video.srcObject);
+}
+
+function stopVideo(stream) {
+  console.log('track inicio', stream);
+  console.log('track inicio', stream.getVideoTracks() );
+  
+  // o seguinte código pausa o video da webcan
+  const videoTracks = stream.getVideoTracks();
+  const mediaAtual = videoTracks[0];
+
+  mediaAtual.stop();
+
+  /**
+   * o seguinte código pausa o video, porém a webcan continuava com a luz
+   */
+  // stream.getVideoTracks().forEach((track) => {
+  //   if (track.readyState === "live" && track.kind === "video") {
+  //     console.log('dentro do if');
+  //     track.stop();
+  //   }
+  //   console.log('mediaStreamTrack fim', track);
+  //   video.srcObject = null;
+  //   window.stream = null;
+  // });
+}
+
+function init(){
+
+  const constraints = {
+    audio: false,
+    video: true,
+  };
+  
+  function handleSucces(stream){
+    console.log('Promisse -> stream', stream)
+      // instancia um MediaStream
+      window.stream = stream;
+      // srcObject é propriedade de HTMLMediaElement (elementos de midia no HTML) carrega um src na tag video
+      video.srcObject = stream;
   }
+  
+  function handleError(error){
+    console.log("mensagem de erro : ", error.message, error.name)
+    if (error.message === "Permission denied"){
+      // poderia utilizar a API nativa "Permissions"  (https://caniuse.com/#feat=permissions-api) 
+      // porem, alguns navegadores ainda n tem suporte
+      
+    }
+  }
+  
+  // com esta promisse o stream retorna um objeto 
+  // MEDIASTREAM (ela possui propriedades relacionadas com o video)
+  navigator.mediaDevices.getUserMedia(constraints).then(handleSucces).catch(handleError)
 }
 
-// com esta promisse o stream retorna um objeto 
-// MEDIASTREAM (ela possui propriedades relacionadas com o video)
-navigator.mediaDevices.getUserMedia(constraints).then(handleSucces).catch(handleError)
