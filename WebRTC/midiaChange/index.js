@@ -75,7 +75,7 @@ function init(){
   const constraints = {
     audio: false,
     // video: true,
-    video: {deviceId: videoDeviceAtual},
+    video: {deviceId: videoDeviceAtual.id},
   };
   
   function handleSucces(stream){
