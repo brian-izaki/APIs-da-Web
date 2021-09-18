@@ -51,7 +51,7 @@ Estudo de APIs nativos dos Browsers
 
 - São utilizadas as APIs **CustomElements** e **ShadowDOM** para poder gerar um WebComponent.
 - Com ela, não é necessário o uso de um framework para gerar componentes HTML.
-- é possivel criar tags customizadas com o **CustomElements** e o **ShadowDOM** gerar o conteudo em html dessa tag customizada
+- é possivel criar novas tags ou customizar tags existentes com o **CustomElements** e o **ShadowDOM** gerar o conteudo em html dessa tag customizada
 
 ### Referencias
 - [WebRTC.org](https://webrtc.org/)
