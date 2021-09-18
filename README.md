@@ -54,7 +54,10 @@ Estudo de APIs nativos dos Browsers
 - é possivel criar novas tags ou customizar tags existentes com o **CustomElements** e o **ShadowDOM** gerar o conteudo em html dessa tag customizada
 
 ### Referencias
-- [WebRTC.org](https://webrtc.org/)
+- MDN doc
+  - [webComponents](https://developer.mozilla.org/pt-BR/docs/Web/Web_Components)
+  - [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
+  - [customElements](https://developer.mozilla.org/pt-BR/docs/Web/Web_Components/Using_custom_elements)
 - [Anotações do Notion](https://woolen-muskmelon-bff.notion.site/Web-Components-64a211cb7d7440338541284a18001a24)
 
 </details>
