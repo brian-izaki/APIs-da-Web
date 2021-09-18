@@ -41,3 +41,20 @@ Estudo de APIs nativos dos Browsers
 - [WebRTC.org](https://webrtc.org/)
 
 </details>
+
+<br>
+
+<details>
+<summary style="color: #9ACFDD; cursor: pointer">Web Component - customElements & shadowDOM</summary>
+
+## Web Component
+
+- São utilizadas as APIs **CustomElements** e **ShadowDOM** para poder gerar um WebComponent.
+- Com ela, não é necessário o uso de um framework para gerar componentes HTML.
+- é possivel criar tags customizadas com o **CustomElements** e o **ShadowDOM** gerar o conteudo em html dessa tag customizada
+
+### Referencias
+- [WebRTC.org](https://webrtc.org/)
+- [Anotações do Notion](https://woolen-muskmelon-bff.notion.site/Web-Components-64a211cb7d7440338541284a18001a24)
+
+</details>
