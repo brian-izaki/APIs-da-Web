@@ -1,0 +1,31 @@
+/************ 
+  ele é especifico para se refrir ao webComponent (nesse caso a tag 
+  <meu-contador>) 
+************/
+:host {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 40px;
+}
+
+button {
+  margin-left: 1em;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+button + button {
+  margin-top: 10px;
+}
+
+.contador-controls {
+  width: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+}
