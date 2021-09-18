@@ -1,0 +1,23 @@
+{
+  "name": "apis-da-web",
+  "version": "1.0.0",
+  "description": "Estudo de APIs dos Browsers que conseguem acessar recursos nativos",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brian-izaki/APIs-da-Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brian-izaki/APIs-da-Web/issues"
+  },
+  "homepage": "https://github.com/brian-izaki/APIs-da-Web#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
