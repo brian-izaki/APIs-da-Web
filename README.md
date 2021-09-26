@@ -78,3 +78,18 @@ Estudo de APIs nativos dos Browsers
 - [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
 
 </details>
+
+<br>
+
+<details>
+<summary style="color: #9ACFDD; cursor: pointer">Canvas</summary>
+
+## Canvas
+
+- utilizado para criar desenhos com pixels, jogos, renderizações 3D
+- ele é mais otimizado se comparado ao SVG
+
+### Referencias
+- [tutorial](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)
+
+</details>

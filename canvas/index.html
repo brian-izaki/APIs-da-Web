@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+
+    <style>
+        canvas {
+            border: 2px dashed darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Canvas</h1>
+
+    <hr>
+
+    <h2>Desenhando formas</h2>
+    <canvas width="600" height="300" id="canvas1"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas1");
+        const ctx = canvas.getContext("2d");
+
+        // cria um quadrado preenchido
+        ctx.fillStyle = "rgba(0, 0, 200, 0.8)";
+        ctx.fillRect(100, 100, 130, 90)
+
+        // cria apenas um quadrado com linhas
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 5;
+        ctx.strokeRect(210, 150, 90, 90);
+
+        // limpa o local com as coordenadas passadas
+        ctx.clearRect(140, 140, 100, 60)
+
+        let p = new Path2D("M 150 10 h 80 v 80 Z")
+        ctx.fill(p)
+    </script>
+
+    <hr>
+
+    <h2>Transformações (movimentos deles)</h2>
+    <canvas width="600" height="300" id="canvas2"></canvas>
+    <script>
+        const canvas2 = document.getElementById("canvas2");
+        const ctx2 = canvas2.getContext("2d");
+
+        ctx2.fillStyle = "rgba(0, 100, 100, 0.8)";
+        
+        // salva o estado de coordenada atual
+        ctx2.save()
+        
+        // o translate altera quem é a minha coordenada base.
+        ctx2.translate(200, 100);
+        ctx2.fillRect(0, 0, 100, 100)
+        // coordenada base é com base no translate
+        ctx2.fillRect(0, 0, 50, 50)
+
+        // restaura para as coordenadas salvas anteriormente.
+        ctx2.restore()
+        ctx2.fillRect(0, 0, 50, 50)
+
+        ctx2.save()
+        ctx2.translate(200, 200);
+        ctx2.rotate(Math.PI / 8)
+        ctx2.scale(1, 1.5)
+        ctx2.fillRect(0, 0, 50, 50)
+    </script>
+
+    <hr>
+
+
+
+</body>
+
+</html>
