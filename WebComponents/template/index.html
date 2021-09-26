@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebComponents</title>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <h1>HTML Templates</h1>
+
+    <template id="template-wc">
+        <style>
+            :host {
+                display: flex;
+                flex-direction: column;
+                background-color: #778;
+                color: white;
+                padding: 1em;
+                margin: 1em;
+            }
+        </style>
+        <h2>Este é o título do template</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quibusdam doloribus quia dolor, atque omnis
+            officia est minima doloremque fuga corrupti quae ipsum?</p>
+    </template>
+
+    <!-- deve ficar após o template para que o shadow dom possa capturar o elemento template especificado acima -->
+    <hello-world></hello-world>
+
+
+    <script>
+        // adicionando o template de forma normal
+        const tpl = document.getElementById('template-wc');
+        document.body.append(tpl.content.cloneNode(true))
+    </script>
+</body>
+
+</html>

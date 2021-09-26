@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebComponents</title>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <h1>Slots</h1>
+
+    <template id="template-wc">
+        <style>
+            :host {
+                display: flex;
+                flex-direction: column;
+                background-color: #778;
+                color: white;
+                padding: 1em;
+                margin: 1em;
+            }
+        </style>
+
+        <slot name="titulo">
+            <h2>Este é o título default</h2>
+        </slot>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quibusdam doloribus quia dolor, atque omnis
+            officia est minima doloremque fuga corrupti quae ipsum?</p>
+
+        <slot name="conteudo"></slot>
+
+        <slot></slot>
+    </template>
+
+    <hello-world>
+        <div slot="conteudo">Este é o conteúdo do slot</div>
+        <h2 slot="titulo">Este é o titulo do slot</h2>
+    </hello-world>
+
+    <hr>
+
+    <hello-world>
+        <div name="conteudo">slot com conteudo</div>
+        <small style="color: pink">slot sem nome</small>
+    </hello-world>
+
+</body>
+
+</html>
