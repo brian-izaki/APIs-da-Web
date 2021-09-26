@@ -61,3 +61,20 @@ Estudo de APIs nativos dos Browsers
 - [Anotações do Notion](https://woolen-muskmelon-bff.notion.site/Web-Components-64a211cb7d7440338541284a18001a24)
 
 </details>
+
+<br>
+
+<details>
+<summary style="color: #9ACFDD; cursor: pointer">SVG</summary>
+
+## SVG
+
+- utilizado para criar desenhos e gráficos no html.
+- elemento `path` é um dos elementos importantes para poder criar elementos com linhas e curvas.
+  - ele possui **comandos** para representar o tipo de movimento que será feito, linha, mover, curva, etc.
+
+### Referencias
+- [w3shools](https://www.w3schools.com/html/html5_svg.asp)
+- [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths)
+
+</details>

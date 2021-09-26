@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+
+    <style>
+        svg {
+            border: 1px dotted darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SVG</h1>
+    <hr>
+
+    <h2>Retângulo</h2>
+    <svg width="200" height="120">
+        <rect x="10" y="10" width="100" height="40" />
+    </svg>
+
+    <h2>Círculo</h2>
+    <svg width="200" height="120">
+        <circle cx="120" cy="70" r="30" fill="rgba(255, 0, 255, 0.5)" stroke="black" stroke-width="2" />
+
+        <circle cx="100" cy="50" r="30" fill="rgba(255, 0, 255, 0.5)" stroke="black" stroke-width="2" />
+    </svg>
+
+    <hr>
+
+    <h2>Path básico</h2>
+    <svg width="200" height="120">
+        <!-- coordenadas entede-se por (X, Y) -->
+        <path d="M 50 20 L 95 30 L 20 90" fill="none" stroke="red"/>
+        <!-- M represta o movimento do lápis para uma determinada coordenada -->
+        <!-- L para traçar uma linha a partir da coordenada atual até uma que é especificada à direita -->
+    </svg>
+
+    <svg width="200" height="120">
+        <path d="M 100 50 L 95 30 L 20 90" fill="none" stroke="red"/>
+        <!-- Z é para fechar a linha da coordenada atual até o ponto inicial -->
+    </svg>
+
+    <svg width="200" height="120">
+        <path d="M 100 50 L 95 30 L 20 90 M 20 20 L 30 30 L 30 50 Z" fill="none" stroke="red"/>
+        <!-- Z é para fechar a linha da coordenada atual até o ponto inicial -->
+    </svg>
+    
+    <svg width="200" height="120">
+        <path d="M 100 50 L 95 30 L 20 90 Z M 20 20 L 30 30 L 30 50 Z" fill="none" stroke="red"/>
+        <!-- Z é para fechar a linha da coordenada atual até o ponto inicial -->
+    </svg>
+    
+    <svg width="200" height="120">
+        <text x="0" y="10" style="font-size: 10px;">Comandos H e V</text>
+        <path d="M 50 50 H 100 V 100" fill="none" stroke="red"/>
+        <!-- H serve para indicar o ponto X apenas -->
+        <!-- V serve para indicar o ponto Y apenas -->
+    </svg>
+    
+    <svg width="200" height="120">
+        <text x="0" y="10" style="font-size: 10px;">Comandos h e v (relativos ao ponto inicial)</text>
+        <path d="M 50 50 h 50 v 50" fill="none" stroke="red"/>
+        <!-- eles são relativos ao ponto inicial, ou seja, é contado o tamanho a partir de onde vc apontou anteriormente. -->
+        <!-- h serve para indicar o ponto X apenas -->
+        <!-- v serve para indicar o ponto Y apenas -->
+    </svg>
+
+</body>
+
+</html>
